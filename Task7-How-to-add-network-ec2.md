@@ -33,6 +33,6 @@ INSTANCE_ID=$(aws ec2 describe-instances --region us-east-1 --filters "Name=tag:
 
 # Describe the Network Interfaces of the Instance
 aws ec2 describe-instances --region us-east-1 --instance-id $INSTANCE_ID --query "Reservations[*].Instances[*].NetworkInterfaces[*].[NetworkInterfaceId,Attachment.DeviceIndex]" --output table
-
+```
 
 ![alt text](image-4.png)
