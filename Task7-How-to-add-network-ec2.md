@@ -35,4 +35,4 @@ INSTANCE_ID=$(aws ec2 describe-instances --region us-east-1 --filters "Name=tag:
 aws ec2 describe-instances --region us-east-1 --instance-id $INSTANCE_ID --query "Reservations[*].Instances[*].NetworkInterfaces[*].[NetworkInterfaceId,Attachment.DeviceIndex]" --output table
 
 
-![Attach-elastic-network-interface-EC2](image-4.png)
+![alt text](image-4.png)
