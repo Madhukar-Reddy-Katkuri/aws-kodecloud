@@ -6,7 +6,7 @@ An IAM user named iamuser_john and a policy named iampolicy_john already exist. 
 
 ```
 # Get the ARN of the iampolicy_john policy
-POLICY_ARN=$(aws iam list-policies --query "Policies[PolicyName=='iampolicy_john'].Arn" --output text)
+POLICY_ARN=$(aws iam list-policies --query "Policies[?PolicyName=='iampolicy_john'].Arn" --output text)
 
 # Attach the policy to the iamuser_john user
 aws iam attach-user-policy --policy-arn $POLICY_ARN --user-name iamuser_john
